@@ -1,24 +1,42 @@
-.plots {
-    text-align: center;
-  }
-  
-  .plots-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1rem;
-  }
-  
-  .plot-item {
-    background-color: #ffffff;
-    border: 1px solid #dee2e6;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .plot-image {
-    width: 100%;
-    border-radius: 4px;
-  }
-  
+/* Centered and consistent title styling */
+.page-title {
+  text-align: center;
+  color: #333; /* Similar to Analysis page */
+  font-weight: bold;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+
+
+
+/* Plot Card container */
+.plot-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 10px;
+}
+
+/* Individual Plot Card */
+.plot-card {
+  background-color: #f9f9f9; /* Light background for cards */
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+
+}
+
+/* Image styling within Plot Cards */
+.plot-card img {
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+/* Plot description styling */
+.plot-description {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #666;
+}

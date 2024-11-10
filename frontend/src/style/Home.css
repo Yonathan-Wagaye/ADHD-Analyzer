@@ -1,25 +1,75 @@
-.home {
-    text-align: center;
-  }
-  
-  .upload-form {
-    margin-top: 1rem;
-  }
-  
-  .file-input {
-    margin: 0.5rem;
-  }
-  
-  .upload-button {
-    background-color: #007bff;
-    color: white;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .upload-button:hover {
-    background-color: #0056b3;
-  }
-  
+/* Home Container */
+.home-container {
+  max-width: 600px; /* Limit container width for readability */
+  margin: 40px auto; /* Center the container with top and bottom margin */
+  padding: 30px 20px; /* Add padding for content spacing */
+  background-color: #FFFFFF; /* White background to make it stand out */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+  text-align: center; /* Center-align text */
+}
+
+/* Heading */
+.home-container h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #191414; /* Spotify dark color for heading */
+  margin-bottom: 20px;
+}
+
+/* Form and Button Styling */
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px; /* Spacing between form elements */
+}
+
+.file-input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  outline: none;
+  width: 100%;
+  max-width: 250px;
+}
+
+.file-input:focus {
+  border-color: #1DB954; /* Spotify Green */
+  box-shadow: 0 0 4px rgba(29, 185, 84, 0.5);
+}
+
+.upload-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #FFFFFF; /* White text */
+  background-color: #1DB954; /* Spotify Green */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.upload-button:hover {
+  background-color: #1AAE4F; /* Slightly darker green on hover */
+}
+
+.upload-button:disabled {
+  background-color: #b3b3b3; /* Light gray for disabled state */
+  cursor: not-allowed;
+}
+
+/* Loading and Error Messages */
+.loading-message {
+  font-style: italic;
+  color: #555;
+  margin-top: 10px;
+}
+
+.error-message {
+  color: #D32F2F; /* Red for error messages */
+  font-weight: bold;
+  margin-top: 10px;
+}

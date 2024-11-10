@@ -1,25 +1,38 @@
-nav {
-  background-color: #333;
-  padding: 1rem;
-}
+/* App.css */
 
-nav ul {
-  list-style: none;
+.app-container {
   display: flex;
-  align-items: center;
-  gap: 2rem;
-
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-nav ul li {
-  color: white;
+.app-nav ul {
+  display: flex;
+  list-style: none;
+  background-color: #191414;
+  padding: 15px;
+  margin: 0;
 }
 
-nav ul li a {
-  color: white;
+.app-nav ul li {
+  margin-right: 20px;
+}
+
+.app-nav ul li a {
+  color: #ffffff;
   text-decoration: none;
+  font-weight: bold;
 }
 
-nav ul li a:hover {
-  font-weight: bold;
+.app-nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.content {
+  flex: 1; /* Ensures content takes up available space */
+  padding: 20px;
+}
+
+footer {
+  margin-top: auto; /* Pushes footer to bottom */
 }

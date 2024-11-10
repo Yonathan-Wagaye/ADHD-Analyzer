@@ -2,6 +2,12 @@ import os
 import json
 import pandas as pd
 import scipy.stats as stats
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+import seaborn as sns
+import io
+import base64
 
 def extractParticipant(baseDir, startExptNum, endExptNum, startSession, endSession):
     participantAcc = {} 
@@ -77,39 +83,83 @@ def createTotalError(final_df):
     final_df['total_errors'] = final_df['total_error_w'] + final_df['total_error_wo']
     return final_df
 
-def getErrors(final_df):
-    errors_adhd_w = final_df[final_df['ADHD_Indication'] == True]['total_error_w']
-    errors_non_adhd_w = final_df[final_df['ADHD_Indication'] == False]['total_error_w']
-    errors_adhd_wo = final_df[final_df['ADHD_Indication'] == True]['total_error_wo']
-    errors_non_adhd_wo = final_df[final_df['ADHD_Indication'] == False]['total_error_wo']
-    total_errors_adhd = final_df[final_df['ADHD_Indication'] == True]['total_errors']
-    total_errors_non_adhd = final_df[final_df['ADHD_Indication'] == False]['total_errors']
-    
-    return {
-        'errors_adhd_w': errors_adhd_w,
-        'errors_non_adhd_w': errors_non_adhd_w,
-        'errors_adhd_wo': errors_adhd_wo,
-        'errors_non_adhd_wo': errors_non_adhd_wo,
-        'total_errors_adhd': total_errors_adhd,
-        'total_errors_non_adhd': total_errors_non_adhd
-    }
+def convertToAccuracy(df):
+    """
+    Converts total error columns to accuracy for both with and without distraction.
+    """
+    df["total_error_w"] = 1 - df["total_error_w"] / 120
+    df["total_error_wo"] = 1 - df["total_error_wo"] / 120
+    return df
 
-def stat_test(x, y, alt='two-sided', option='indep'):
-    wx, px = stats.shapiro(x)
-    wy, py = stats.shapiro(y)
-    t_stat, p_val = 0, 0
-    if px > 0.05 and py > 0.05:
-        if option == 'indep':
-            levene_stat, levene_p_val = stats.levene(x, y)
-            if levene_p_val > 0.05:
-                t_stat, p_val = stats.ttest_ind(x, y, alternative=alt)
-            else:
-                t_stat, p_val = stats.ttest_ind(x, y, alternative=alt, equal_var=False)
-        else:
-            t_stat, p_val = stats.ttest_rel(x, y, alternative=alt)
-    else:
-        if option == 'indep':
-            t_stat, p_val = stats.ranksums(x, y, alternative=alt)
-        else:
-            t_stat, p_val = stats.wilcoxon(x, y, alternative=alt)
-    return t_stat, p_val
+def sameGroup(final_df):
+    adhd_df = final_df[final_df['ADHD_Indication'] == True]
+    non_adhd_df = final_df[final_df['ADHD_Indication'] == False]
+    
+    plt.figure(figsize=(14, 6))
+    
+    # Plot for ADHD group with and without distraction
+    plt.subplot(1, 2, 1)
+    sns.boxplot(data=adhd_df[['total_error_w', 'total_error_wo']])
+    plt.title('ADHD Group')
+    plt.xlabel('Condition')
+    plt.ylabel('Accuracy Rate')
+    plt.xticks([0, 1], ['With Distraction', 'Without Distraction'])
+    plt.ylim([0, 1.05])
+    
+    # Plot for Non-ADHD group with and without distraction
+    plt.subplot(1, 2, 2)
+    sns.boxplot(data=non_adhd_df[['total_error_w', 'total_error_wo']])
+    plt.title('Non-ADHD Group')
+    plt.xlabel('Condition')
+    plt.ylabel('Accuracy Rate')
+    plt.xticks([0, 1], ['With Distraction', 'Without Distraction'])
+    plt.ylim([0, 1.05])
+    
+    plt.tight_layout()
+    
+    # Save plot to a bytes buffer and encode to base64
+    buf = io.BytesIO()
+    plt.savefig(buf, format='png')
+    buf.seek(0)
+    plt.close()
+    plot_base64 = base64.b64encode(buf.getvalue()).decode('utf-8')
+    return plot_base64
+
+def diffGroup(final_df):
+    adhd_df = final_df[final_df['ADHD_Indication'] == True]
+    non_adhd_df = final_df[final_df['ADHD_Indication'] == False]
+    
+    plt.figure(figsize=(14, 6))
+    
+    # Combine the ADHD and Non-ADHD data for plotting
+    with_distraction = pd.concat([adhd_df[['total_error_w']].assign(Group='ADHD'),
+                                  non_adhd_df[['total_error_w']].assign(Group='Non-ADHD')])
+    
+    without_distraction = pd.concat([adhd_df[['total_error_wo']].assign(Group='ADHD'),
+                                     non_adhd_df[['total_error_wo']].assign(Group='Non-ADHD')])
+    
+    # Plot for ADHD and Non-ADHD group with distraction
+    plt.subplot(1, 2, 1)
+    sns.boxplot(x='Group', y='total_error_w', data=with_distraction)
+    plt.title('With Distraction')
+    plt.xlabel('Group')
+    plt.ylabel('Accuracy Rate')
+    plt.ylim([0, 1.05])
+    
+    # Plot for ADHD and Non-ADHD group without distraction
+    plt.subplot(1, 2, 2)
+    sns.boxplot(x='Group', y='total_error_wo', data=without_distraction)
+    plt.title('Without Distraction')
+    plt.xlabel('Group')
+    plt.ylabel('Accuracy Rate')
+    plt.ylim([0, 1.05])
+    
+    plt.tight_layout()
+    
+    # Save plot to a bytes buffer and encode to base64
+    buf = io.BytesIO()
+    plt.savefig(buf, format='png')
+    buf.seek(0)
+    plt.close()
+    plot_base64 = base64.b64encode(buf.getvalue()).decode('utf-8')
+    return plot_base64

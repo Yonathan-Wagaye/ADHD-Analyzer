@@ -1,19 +1,32 @@
-.analysis {
-    text-align: center;
-  }
-  
-  .analysis-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-  
-  .analysis-item {
-    background-color: #ffffff;
-    border: 1px solid #dee2e6;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
+.analysis-container {
+  background-color: #f5f5f5;
+  color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  color: #2c3e50;
+  text-align: center;
+  font-size: 2em;
+}
+
+.subtitle {
+  color: #4a4a4a;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.table-section {
+  margin-bottom: 30px;
+}
+
+.section-title {
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
