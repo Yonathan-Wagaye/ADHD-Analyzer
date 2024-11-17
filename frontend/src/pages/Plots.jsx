@@ -32,6 +32,7 @@ const Plots = () => {
   return (
     <div>
       <h2 className="page-title">Plots</h2>
+      <h3>General Acuuracy Trendines</h3>
       <div className="plot-card-container">
         {plots.map((plot, index) => (
           <PlotCard
