@@ -1,6 +1,7 @@
 import os
 import json
 import pandas as pd
+from preprocessor.accuracys_stats_preprocessor import preprocess_accuracy_stat
 
 def extractErrors(file_path):
     """Extract errors from response time text files."""
@@ -117,3 +118,4 @@ def preprocess_and_save_trendlines(baseDir, pre_experiment_file):
 def preprocess_accuracy_trend(baseDir):
     PRE_EXPERIMENT_FILE = baseDir + "/Pre-Experiment Questionnaire.csv"
     preprocess_and_save_trendlines(baseDir, PRE_EXPERIMENT_FILE)
+    preprocess_accuracy_stat(baseDir=baseDir)

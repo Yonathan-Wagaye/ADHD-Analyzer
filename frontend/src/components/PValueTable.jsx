@@ -21,7 +21,12 @@ const PValueTable = ({ data, columnOrder }) => {
           <tr key={rowIndex}>
             <td>{label}</td>
             {columnOrder.map((col, colIndex) => (
-              <td key={colIndex}>
+              <td
+                key={colIndex}
+                style={{
+                  color: col.toLowerCase().includes('p_value') && data[label][col] < 0.05 ? 'red' : 'inherit',
+                }}
+              >
                 {data[label][col] !== undefined ? data[label][col] : ''}
               </td>
             ))}

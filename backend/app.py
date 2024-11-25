@@ -2,11 +2,21 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import os
 import zipfile
+
 import preprocessor.preliminary_preprocessor as preprocessor
 from preprocessor.accuracy_trendline_preprocessor import preprocess_accuracy_trend
-from plotters.accuracy_trendline_plotter import generate_plots
 from preprocessor.gender_accuracy_trendline_preprocessor import save_gender_accuracy_to_json
+from preprocessor.gender_accuracy_stat_preprocessor import preprocess_gender_stat
+
+from plotters.accuracy_trendline_plotter import generate_plots
 from plotters.gender_acuracy_trendline_plotter import generate_gender_trendline_plot
+from plotters.gender_post_expt_plotter import generate_gender_based_box_plots
+from plotters.severity_dist_plotter import generate_pre_experiment_plot
+
+
+from analyzer.accuracy_tendline_analyzer import analyze_accuracy_chiSquare
+from analyzer.gender_accuracy_analyzer import analyze_gender_accuracy
+
 import analyzer.preliminary_stat_test as stat_test
 
 app = Flask(__name__)
@@ -59,11 +69,18 @@ def generate_analysis():
     try:
         # Load the preprocessed data
         data = stat_test.load_accuracy_data()
-        
         # Perform statistical analysis
         between_group_results = stat_test.basic_between_test(data)
         within_group_results = stat_test.basic_within_test(data)
+        
+        # Perform chi-square analysis
 
+        chi_square_results = analyze_accuracy_chiSquare()
+
+        # gender accuracy analysis
+        preprocess_gender_stat("unzipped/RawData/RawData" )
+        trend_analysis_results = analyze_gender_accuracy()
+       
         return jsonify({
             "message": "Statistical analysis generated successfully",
             "stats": {
@@ -76,6 +93,14 @@ def generate_analysis():
                         "title": "Within Group P-Value",
                         "data": within_group_results
                     }
+                },
+                "trend_pvalue": {
+                    "title": "Trend-Based P-Values",
+                    "data": trend_analysis_results,
+                },
+                "chi_square": {
+                    "title": "Chi-Square Analysis",
+                    "data": chi_square_results
                 }
             }
         }), 200
@@ -83,8 +108,6 @@ def generate_analysis():
     except Exception as e:
         print(f'Analysis error: {e}')
         return jsonify({"error": str(e)}), 500
-
-
 # Route 3: Generate and Return Plots
 @app.route('/api/plot', methods=['GET'])
 def generate_plot():
@@ -123,6 +146,32 @@ def generate_plot():
             "title": "Gender-Based Trendline Plot",
             "description": "Interactive trendline plot by gender and ADHD status.",
             "plotUrl": gender_plot_base64
+        })
+
+        box_plots = generate_gender_based_box_plots(
+            pre_experiment_csv=os.path.join(baseDir, "Pre-Experiment Questionnaire.csv"),
+            post_experiment_csv=os.path.join(baseDir, "Post-Experiment Question.csv")
+        )
+
+        # Add box plots to the response
+        for group_name, base64_plot in box_plots.items():
+            response.append({
+                "title": f"Box Plot - {group_name.replace('_', ' ')}",
+                "description": f"Box plot showing the level of distraction for {group_name.replace('_', ' ')} participants.",
+                "plotUrl": base64_plot
+            })
+        
+
+
+        pre_experiment_plot_base64 = generate_pre_experiment_plot(
+            pre_experiment_csv=pre_experiment_file,
+            column="ADHD Score",  # Adjust the column name based on your dataset
+            title="Severity Level Distribution"
+        )
+        response.append({
+            "title": "Severity Level Distribution Plot",
+            "description": "Bar plot showing score frequencies from the pre-experiment questionnaire.",
+            "plotUrl": pre_experiment_plot_base64
         })
 
         return jsonify({

@@ -87,7 +87,7 @@ def create_gender_trendline_plot(gender_accuracy, n=120):
     plt.title('Gender-Based Accuracy Trendline', fontsize=16)
     plt.xlabel('Time (Frames)', fontsize=12)
     plt.ylabel('Accuracy Score (out of 100)', fontsize=12)
-    plt.ylim(60, 101)  # Set y-axis limits
+    plt.ylim(85, 101)  # Set y-axis limits
     plt.xticks([n * i for i in range(8)], [f'Session {i}' for i in range(1, 9)])  # Match 8 ticks with 8 labels
     plt.legend(loc='best', fontsize=12)
     plt.grid(axis='y', linestyle='--', alpha=0.7)

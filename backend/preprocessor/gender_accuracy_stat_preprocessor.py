@@ -49,7 +49,7 @@ def extractParticipant(baseDir, session, participants, n=120):
     - session_scores: Dictionary with 'w' and 'wo' accuracy percentages for the given participants.
     """
     num_blocks = 120 // n  # Calculate the number of blocks based on 'n'
-    session_scores = {'w': [0] * num_blocks, 'wo': [0] * num_blocks}
+    session_scores = {'w': [[] for _ in range(num_blocks)], 'wo': [[] for _ in range(num_blocks)]}
 
     for participant_id in participants:
         currentPath = os.path.join(baseDir, f'P{participant_id}/expt_{participant_id}_session_{session}_Response_Time.txt')
@@ -67,11 +67,11 @@ def extractParticipant(baseDir, session, participants, n=120):
             # Normalize to percentage
             accuracy_percentage = (correct_trials / n) * 100
 
-            # Determine the session type ('w' or 'wo') and update the scores
+            # Determine the session type ('w' or 'wo') and append the scores
             if session in [1, 4, 5, 8]:  # 'w' sessions (with distraction)
-                session_scores['w'][i // n] += accuracy_percentage
+                session_scores['w'][i // n].append(accuracy_percentage)
             else:  # 'wo' sessions (without distraction)
-                session_scores['wo'][i // n] += accuracy_percentage
+                session_scores['wo'][i // n].append(accuracy_percentage)
 
     return session_scores
 
@@ -88,29 +88,27 @@ def compute_gender_accuracy(baseDir, gender_groups, n=120):
     Returns:
     - gender_accuracy: Dictionary of accuracy percentages for each gender group.
     """
-    gender_accuracy = {group: {f'Session {i}': {'w': [0] * (120 // n), 'wo': [0] * (120 // n)} for i in range(1, 9)}
-                       for group in gender_groups}
+    # Initialize gender_accuracy with lists of lists for each block
+    gender_accuracy = {group: {f'Session {i}': {'w': [[] for _ in range(120 // n)], 'wo': [[] for _ in range(120 // n)]}
+                                for i in range(1, 9)} for group in gender_groups}
 
     for group, participants in gender_groups.items():
         for session in range(1, 9):
             session_scores = extractParticipant(baseDir, session, participants, n)
-            for block in range(len(session_scores['w'])):
-                gender_accuracy[group][f'Session {session}']['w'][block] += session_scores['w'][block]
-                gender_accuracy[group][f'Session {session}']['wo'][block] += session_scores['wo'][block]
-
-    # Normalize scores to calculate mean accuracy for each block
-    for group, participants in gender_groups.items():
-        num_participants = len(participants)
-        for session in range(1, 9):
-            for block in range(len(gender_accuracy[group][f'Session {session}']['w'])):
-                gender_accuracy[group][f'Session {session}']['w'][block] *= (1/ (num_participants))
-                gender_accuracy[group][f'Session {session}']['wo'][block] *= (1/ (num_participants))
+            for block_index in range(len(session_scores['w'])):
+                # Add individual values to the nested lists without using extend
+                for score in session_scores['w'][block_index]:
+                    gender_accuracy[group][f'Session {session}']['w'][block_index].append(score)
+                for score in session_scores['wo'][block_index]:
+                    gender_accuracy[group][f'Session {session}']['wo'][block_index].append(score)
 
     return gender_accuracy
 
 
 
-def save_gender_accuracy_to_json(baseDir, pre_experiment_csv, output_file="results/gender_accuracy.json", n=120):
+
+
+def save_gender_accuracy_to_json(baseDir, pre_experiment_csv, output_file="results/gender_stat_accuracy.json", n=120):
     """
     Save the computed gender accuracy to a JSON file.
 
@@ -146,5 +144,9 @@ def save_gender_accuracy_to_json(baseDir, pre_experiment_csv, output_file="resul
     with open(output_file, "w") as json_file:
         json.dump(gender_accuracy, json_file, indent=4)
     print(f"Gender accuracy saved to {output_file}.")
+
+def preprocess_gender_stat(baseDir):
+    PRE_EXPERIMENT_FILE = baseDir + "/Pre-Experiment Questionnaire.csv"
+    save_gender_accuracy_to_json(baseDir, PRE_EXPERIMENT_FILE)
 
 
