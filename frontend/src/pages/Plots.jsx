@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import AccuracyPlot from '../components/AccuracyPlot';
+import PosePlot from '../components/PosePlot';
 import { fetchPlotData } from '../api';
-import PlotCard from '../components/PlotCard';
 import '../style/Plots.css';
 
 const Plots = () => {
-  const [plots, setPlots] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState('accuracy');
+  const [accuracyPlots, setAccuracyPlots] = useState([]);
+  const [posePlots, setPosePlots] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -15,7 +18,10 @@ const Plots = () => {
 
       try {
         const data = await fetchPlotData();
-        setPlots(data.plots);
+
+        // Separate plots for accuracy and pose
+        setAccuracyPlots(data.accuracy_plots || []);
+        setPosePlots(data.pose_plots || []);
       } catch (err) {
         setError(`Failed to fetch plot data: ${err.message}`);
       } finally {
@@ -32,17 +38,19 @@ const Plots = () => {
   return (
     <div>
       <h2 className="page-title">Plots</h2>
-      <h3>General Acuuracy Trendines</h3>
-      <div className="plot-card-container">
-        {plots.map((plot, index) => (
-          <PlotCard
-            key={index}
-            title={plot.title}
-            plots={[`data:image/png;base64,${plot.plotUrl}`]}
-            description={plot.description}
-          />
-        ))}
+      <div className="dropdown-container">
+        <label htmlFor="plot-category">Select Plot Category:</label>
+        <select
+          id="plot-category"
+          value={selectedCategory}
+          onChange={(e) => setSelectedCategory(e.target.value)}
+        >
+          <option value="accuracy">Accuracy Plots</option>
+          <option value="pose">Pose Stability Plots</option>
+        </select>
       </div>
+      {selectedCategory === 'accuracy' && <AccuracyPlot plots={accuracyPlots} />}
+      {selectedCategory === 'pose' && <PosePlot plots={posePlots} />}
     </div>
   );
 };

@@ -4,7 +4,7 @@ import os
 from utils.stat_tests import stat_test
 
 
-def load_accuracy_data(csv_file="../backend/results/accuracy_data.csv"):
+def load_accuracy_data(csv_file="../backend/results/accuracy/accuracy_data.csv"):
     """
     Loads the accuracy data from a specified CSV file.
     """

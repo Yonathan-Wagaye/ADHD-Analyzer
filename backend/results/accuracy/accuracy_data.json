@@ -1,0 +1,522 @@
+[
+    {
+        "Participant number:":1,
+        "w_incorrect_pass":12,
+        "w_incorrect_click":6,
+        "wo_incorrect_pass":8,
+        "wo_incorrect_click":6,
+        "total_error_w":0.85,
+        "total_error_wo":0.8833333333,
+        "ADHD Indication":true
+    },
+    {
+        "Participant number:":3,
+        "w_incorrect_pass":25,
+        "w_incorrect_click":3,
+        "wo_incorrect_pass":22,
+        "wo_incorrect_click":7,
+        "total_error_w":0.7666666667,
+        "total_error_wo":0.7583333333,
+        "ADHD Indication":false
+    },
+    {
+        "Participant number:":4,
+        "w_incorrect_pass":13,
+        "w_incorrect_click":9,
+        "wo_incorrect_pass":9,
+        "wo_incorrect_click":12,
+        "total_error_w":0.8166666667,
+        "total_error_wo":0.825,
+        "ADHD Indication":false
+    },
+    {
+        "Participant number:":6,
+        "w_incorrect_pass":1,
+        "w_incorrect_click":0,
+        "wo_incorrect_pass":2,
+        "wo_incorrect_click":2,
+        "total_error_w":0.9916666667,
+        "total_error_wo":0.9666666667,
+        "ADHD Indication":false
+    },
+    {
+        "Participant number:":7,
+        "w_incorrect_pass":26,
+        "w_incorrect_click":30,
+        "wo_incorrect_pass":27,
+        "wo_incorrect_click":72,
+        "total_error_w":0.5333333333,
+        "total_error_wo":0.175,
+        "ADHD Indication":true
+    },
+    {
+        "Participant number:":8,
+        "w_incorrect_pass":29,
+        "w_incorrect_click":18,
+        "wo_incorrect_pass":19,
+        "wo_incorrect_click":20,
+        "total_error_w":0.6083333333,
+        "total_error_wo":0.675,
+        "ADHD Indication":true
+    },
+    {
+        "Participant number:":9,
+        "w_incorrect_pass":35,
+        "w_incorrect_click":13,
+        "wo_incorrect_pass":39,
+        "wo_incorrect_click":28,
+        "total_error_w":0.6,
+        "total_error_wo":0.4416666667,
+        "ADHD Indication":true
+    },
+    {
+        "Participant number:":10,
+        "w_incorrect_pass":34,
+        "w_incorrect_click":49,
+        "wo_incorrect_pass":24,
+        "wo_incorrect_click":11,
+        "total_error_w":0.3083333333,
+        "total_error_wo":0.7083333333,
+        "ADHD Indication":false
+    },
+    {
+        "Participant number:":11,
+        "w_incorrect_pass":26,
+        "w_incorrect_click":15,
+        "wo_incorrect_pass":21,
+        "wo_incorrect_click":18,
+        "total_error_w":0.6583333333,
+        "total_error_wo":0.675,
+        "ADHD Indication":false
+    },
+    {
+        "Participant number:":12,
+        "w_incorrect_pass":29,
+        "w_incorrect_click":13,
+        "wo_incorrect_pass":25,
+        "wo_incorrect_click":13,
+        "total_error_w":0.65,
+        "total_error_wo":0.6833333333,
+        "ADHD Indication":true
+    },
+    {
+        "Participant number:":13,
+        "w_incorrect_pass":32,
+        "w_incorrect_click":15,
+        "wo_incorrect_pass":32,
+        "wo_incorrect_click":10,
+        "total_error_w":0.6083333333,
+        "total_error_wo":0.65,
+        "ADHD Indication":false
+    },
+    {
+        "Participant number:":14,
+        "w_incorrect_pass":5,
+        "w_incorrect_click":3,
+        "wo_incorrect_pass":8,
+        "wo_incorrect_click":6,
+        "total_error_w":0.9333333333,
+        "total_error_wo":0.8833333333,
+        "ADHD Indication":false
+    },
+    {
+        "Participant number:":15,
+        "w_incorrect_pass":13,
+        "w_incorrect_click":10,
+        "wo_incorrect_pass":12,
+        "wo_incorrect_click":9,
+        "total_error_w":0.8083333333,
+        "total_error_wo":0.825,
+        "ADHD Indication":false
+    },
+    {
+        "Participant number:":16,
+        "w_incorrect_pass":32,
+        "w_incorrect_click":13,
+        "wo_incorrect_pass":28,
+        "wo_incorrect_click":12,
+        "total_error_w":0.625,
+        "total_error_wo":0.6666666667,
+        "ADHD Indication":false
+    },
+    {
+        "Participant number:":17,
+        "w_incorrect_pass":9,
+        "w_incorrect_click":13,
+        "wo_incorrect_pass":3,
+        "wo_incorrect_click":4,
+        "total_error_w":0.8166666667,
+        "total_error_wo":0.9416666667,
+        "ADHD Indication":false
+    },
+    {
+        "Participant number:":18,
+        "w_incorrect_pass":25,
+        "w_incorrect_click":62,
+        "wo_incorrect_pass":29,
+        "wo_incorrect_click":73,
+        "total_error_w":0.275,
+        "total_error_wo":0.15,
+        "ADHD Indication":true
+    },
+    {
+        "Participant number:":19,
+        "w_incorrect_pass":33,
+        "w_incorrect_click":30,
+        "wo_incorrect_pass":30,
+        "wo_incorrect_click":21,
+        "total_error_w":0.475,
+        "total_error_wo":0.575,
+        "ADHD Indication":true
+    },
+    {
+        "Participant number:":20,
+        "w_incorrect_pass":25,
+        "w_incorrect_click":17,
+        "wo_incorrect_pass":20,
+        "wo_incorrect_click":8,
+        "total_error_w":0.65,
+        "total_error_wo":0.7666666667,
+        "ADHD Indication":true
+    },
+    {
+        "Participant number:":21,
+        "w_incorrect_pass":32,
+        "w_incorrect_click":41,
+        "wo_incorrect_pass":30,
+        "wo_incorrect_click":22,
+        "total_error_w":0.3916666667,
+        "total_error_wo":0.5666666667,
+        "ADHD Indication":false
+    },
+    {
+        "Participant number:":22,
+        "w_incorrect_pass":20,
+        "w_incorrect_click":13,
+        "wo_incorrect_pass":19,
+        "wo_incorrect_click":5,
+        "total_error_w":0.725,
+        "total_error_wo":0.8,
+        "ADHD Indication":false
+    },
+    {
+        "Participant number:":25,
+        "w_incorrect_pass":24,
+        "w_incorrect_click":33,
+        "wo_incorrect_pass":21,
+        "wo_incorrect_click":29,
+        "total_error_w":0.525,
+        "total_error_wo":0.5833333333,
+        "ADHD Indication":true
+    },
+    {
+        "Participant number:":26,
+        "w_incorrect_pass":25,
+        "w_incorrect_click":21,
+        "wo_incorrect_pass":29,
+        "wo_incorrect_click":21,
+        "total_error_w":0.6166666667,
+        "total_error_wo":0.5833333333,
+        "ADHD Indication":true
+    },
+    {
+        "Participant number:":27,
+        "w_incorrect_pass":4,
+        "w_incorrect_click":8,
+        "wo_incorrect_pass":9,
+        "wo_incorrect_click":5,
+        "total_error_w":0.9,
+        "total_error_wo":0.8833333333,
+        "ADHD Indication":true
+    },
+    {
+        "Participant number:":28,
+        "w_incorrect_pass":28,
+        "w_incorrect_click":23,
+        "wo_incorrect_pass":16,
+        "wo_incorrect_click":10,
+        "total_error_w":0.575,
+        "total_error_wo":0.7833333333,
+        "ADHD Indication":true
+    },
+    {
+        "Participant number:":29,
+        "w_incorrect_pass":5,
+        "w_incorrect_click":4,
+        "wo_incorrect_pass":12,
+        "wo_incorrect_click":8,
+        "total_error_w":0.925,
+        "total_error_wo":0.8333333333,
+        "ADHD Indication":true
+    },
+    {
+        "Participant number:":30,
+        "w_incorrect_pass":7,
+        "w_incorrect_click":2,
+        "wo_incorrect_pass":8,
+        "wo_incorrect_click":7,
+        "total_error_w":0.925,
+        "total_error_wo":0.875,
+        "ADHD Indication":true
+    },
+    {
+        "Participant number:":31,
+        "w_incorrect_pass":29,
+        "w_incorrect_click":13,
+        "wo_incorrect_pass":35,
+        "wo_incorrect_click":20,
+        "total_error_w":0.65,
+        "total_error_wo":0.5416666667,
+        "ADHD Indication":false
+    },
+    {
+        "Participant number:":32,
+        "w_incorrect_pass":18,
+        "w_incorrect_click":6,
+        "wo_incorrect_pass":12,
+        "wo_incorrect_click":4,
+        "total_error_w":0.8,
+        "total_error_wo":0.8666666667,
+        "ADHD Indication":true
+    },
+    {
+        "Participant number:":33,
+        "w_incorrect_pass":21,
+        "w_incorrect_click":10,
+        "wo_incorrect_pass":23,
+        "wo_incorrect_click":3,
+        "total_error_w":0.7416666667,
+        "total_error_wo":0.7833333333,
+        "ADHD Indication":true
+    },
+    {
+        "Participant number:":34,
+        "w_incorrect_pass":11,
+        "w_incorrect_click":3,
+        "wo_incorrect_pass":6,
+        "wo_incorrect_click":3,
+        "total_error_w":0.8833333333,
+        "total_error_wo":0.925,
+        "ADHD Indication":false
+    },
+    {
+        "Participant number:":37,
+        "w_incorrect_pass":18,
+        "w_incorrect_click":3,
+        "wo_incorrect_pass":25,
+        "wo_incorrect_click":6,
+        "total_error_w":0.825,
+        "total_error_wo":0.7416666667,
+        "ADHD Indication":true
+    },
+    {
+        "Participant number:":38,
+        "w_incorrect_pass":17,
+        "w_incorrect_click":10,
+        "wo_incorrect_pass":9,
+        "wo_incorrect_click":8,
+        "total_error_w":0.775,
+        "total_error_wo":0.8583333333,
+        "ADHD Indication":true
+    },
+    {
+        "Participant number:":39,
+        "w_incorrect_pass":17,
+        "w_incorrect_click":4,
+        "wo_incorrect_pass":23,
+        "wo_incorrect_click":4,
+        "total_error_w":0.825,
+        "total_error_wo":0.775,
+        "ADHD Indication":true
+    },
+    {
+        "Participant number:":40,
+        "w_incorrect_pass":15,
+        "w_incorrect_click":6,
+        "wo_incorrect_pass":9,
+        "wo_incorrect_click":5,
+        "total_error_w":0.825,
+        "total_error_wo":0.8833333333,
+        "ADHD Indication":true
+    },
+    {
+        "Participant number:":41,
+        "w_incorrect_pass":45,
+        "w_incorrect_click":61,
+        "wo_incorrect_pass":66,
+        "wo_incorrect_click":6,
+        "total_error_w":0.1166666667,
+        "total_error_wo":0.4,
+        "ADHD Indication":true
+    },
+    {
+        "Participant number:":42,
+        "w_incorrect_pass":35,
+        "w_incorrect_click":25,
+        "wo_incorrect_pass":29,
+        "wo_incorrect_click":33,
+        "total_error_w":0.5,
+        "total_error_wo":0.4833333333,
+        "ADHD Indication":false
+    },
+    {
+        "Participant number:":44,
+        "w_incorrect_pass":27,
+        "w_incorrect_click":5,
+        "wo_incorrect_pass":17,
+        "wo_incorrect_click":4,
+        "total_error_w":0.7333333333,
+        "total_error_wo":0.825,
+        "ADHD Indication":false
+    },
+    {
+        "Participant number:":45,
+        "w_incorrect_pass":15,
+        "w_incorrect_click":16,
+        "wo_incorrect_pass":10,
+        "wo_incorrect_click":6,
+        "total_error_w":0.7416666667,
+        "total_error_wo":0.8666666667,
+        "ADHD Indication":false
+    },
+    {
+        "Participant number:":46,
+        "w_incorrect_pass":10,
+        "w_incorrect_click":8,
+        "wo_incorrect_pass":3,
+        "wo_incorrect_click":3,
+        "total_error_w":0.85,
+        "total_error_wo":0.95,
+        "ADHD Indication":false
+    },
+    {
+        "Participant number:":47,
+        "w_incorrect_pass":37,
+        "w_incorrect_click":11,
+        "wo_incorrect_pass":27,
+        "wo_incorrect_click":8,
+        "total_error_w":0.6,
+        "total_error_wo":0.7083333333,
+        "ADHD Indication":false
+    },
+    {
+        "Participant number:":48,
+        "w_incorrect_pass":13,
+        "w_incorrect_click":7,
+        "wo_incorrect_pass":12,
+        "wo_incorrect_click":6,
+        "total_error_w":0.8333333333,
+        "total_error_wo":0.85,
+        "ADHD Indication":false
+    },
+    {
+        "Participant number:":49,
+        "w_incorrect_pass":14,
+        "w_incorrect_click":15,
+        "wo_incorrect_pass":18,
+        "wo_incorrect_click":13,
+        "total_error_w":0.7583333333,
+        "total_error_wo":0.7416666667,
+        "ADHD Indication":false
+    },
+    {
+        "Participant number:":50,
+        "w_incorrect_pass":7,
+        "w_incorrect_click":3,
+        "wo_incorrect_pass":6,
+        "wo_incorrect_click":1,
+        "total_error_w":0.9166666667,
+        "total_error_wo":0.9416666667,
+        "ADHD Indication":false
+    },
+    {
+        "Participant number:":51,
+        "w_incorrect_pass":24,
+        "w_incorrect_click":6,
+        "wo_incorrect_pass":19,
+        "wo_incorrect_click":2,
+        "total_error_w":0.75,
+        "total_error_wo":0.825,
+        "ADHD Indication":true
+    },
+    {
+        "Participant number:":52,
+        "w_incorrect_pass":22,
+        "w_incorrect_click":11,
+        "wo_incorrect_pass":18,
+        "wo_incorrect_click":3,
+        "total_error_w":0.725,
+        "total_error_wo":0.825,
+        "ADHD Indication":true
+    },
+    {
+        "Participant number:":53,
+        "w_incorrect_pass":21,
+        "w_incorrect_click":9,
+        "wo_incorrect_pass":11,
+        "wo_incorrect_click":9,
+        "total_error_w":0.75,
+        "total_error_wo":0.8333333333,
+        "ADHD Indication":true
+    },
+    {
+        "Participant number:":54,
+        "w_incorrect_pass":8,
+        "w_incorrect_click":12,
+        "wo_incorrect_pass":22,
+        "wo_incorrect_click":11,
+        "total_error_w":0.8333333333,
+        "total_error_wo":0.725,
+        "ADHD Indication":true
+    },
+    {
+        "Participant number:":55,
+        "w_incorrect_pass":25,
+        "w_incorrect_click":4,
+        "wo_incorrect_pass":14,
+        "wo_incorrect_click":1,
+        "total_error_w":0.7583333333,
+        "total_error_wo":0.875,
+        "ADHD Indication":true
+    },
+    {
+        "Participant number:":56,
+        "w_incorrect_pass":10,
+        "w_incorrect_click":16,
+        "wo_incorrect_pass":17,
+        "wo_incorrect_click":12,
+        "total_error_w":0.7833333333,
+        "total_error_wo":0.7583333333,
+        "ADHD Indication":false
+    },
+    {
+        "Participant number:":57,
+        "w_incorrect_pass":20,
+        "w_incorrect_click":5,
+        "wo_incorrect_pass":18,
+        "wo_incorrect_click":1,
+        "total_error_w":0.7916666667,
+        "total_error_wo":0.8416666667,
+        "ADHD Indication":false
+    },
+    {
+        "Participant number:":58,
+        "w_incorrect_pass":19,
+        "w_incorrect_click":1,
+        "wo_incorrect_pass":19,
+        "wo_incorrect_click":1,
+        "total_error_w":0.8333333333,
+        "total_error_wo":0.8333333333,
+        "ADHD Indication":false
+    },
+    {
+        "Participant number:":59,
+        "w_incorrect_pass":7,
+        "w_incorrect_click":8,
+        "wo_incorrect_pass":12,
+        "wo_incorrect_click":6,
+        "total_error_w":0.875,
+        "total_error_wo":0.85,
+        "ADHD Indication":false
+    }
+]

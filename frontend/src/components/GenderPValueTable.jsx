@@ -4,8 +4,6 @@ import "../style/TableStyles.css"; // Import the CSS file for table styles
 
 
 const GenderPValueTable = ({ data, title, groupLabels }) => {
-    console.log("g table: ", data.mean_std["Session 1"]["NonADHD_Female"]);
-    console.log(groupLabels.group1)
   return (
     <div className="gender-pvalue-table">
       <h3>{title}</h3>

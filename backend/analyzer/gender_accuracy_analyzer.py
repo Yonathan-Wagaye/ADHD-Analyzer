@@ -76,5 +76,5 @@ def analyze_pvalues_from_json(json_file):
 
 def analyze_gender_accuracy():
     print("before result")
-    result = analyze_pvalues_from_json("results/gender_stat_accuracy.json")
+    result = analyze_pvalues_from_json("results/accuracy/gender_stat_accuracy.json")
     return result

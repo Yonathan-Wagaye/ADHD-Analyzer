@@ -1,6 +1,7 @@
 import os
 import json
 import pandas as pd
+from utils.constants import EXCLUDED_PARTICIPANTS
 
 def extractErrors(file_path):
     """
@@ -52,7 +53,7 @@ def extractParticipant(baseDir, session, participants, n=120):
     session_scores = {'w': [[] for _ in range(num_blocks)], 'wo': [[] for _ in range(num_blocks)]}
 
     for participant_id in participants:
-        currentPath = os.path.join(baseDir, f'P{participant_id}/expt_{participant_id}_session_{session}_Response_Time.txt')
+        currentPath = os.path.join(baseDir, f'Accuracy/P{participant_id}/expt_{participant_id}_session_{session}_Response_Time.txt')
 
         # Extract errors for the current participant and session
         incorrect_click, incorrect_pass = extractErrors(currentPath)
@@ -108,7 +109,7 @@ def compute_gender_accuracy(baseDir, gender_groups, n=120):
 
 
 
-def save_gender_accuracy_to_json(baseDir, pre_experiment_csv, output_file="results/gender_stat_accuracy.json", n=120):
+def save_gender_accuracy_to_json(baseDir, pre_experiment_csv, output_file="../backend/results/accuracy/gender_stat_accuracy.json", n=120):
     """
     Save the computed gender accuracy to a JSON file.
 
@@ -130,7 +131,7 @@ def save_gender_accuracy_to_json(baseDir, pre_experiment_csv, output_file="resul
     }
     for g in ["M-ADHD", "F-ADHD", "M-nonADHD", "F-nonADHD"]:
         for e in gender_groups[g]:
-            if e in [2, 5, 23, 24, 35, 36]:
+            if e in EXCLUDED_PARTICIPANTS:
                 gender_groups[g].remove(e)
     print('M-ADHD: ', len(gender_groups['M-ADHD']))
     print('F-ADHD: ', len(gender_groups['F-ADHD']))

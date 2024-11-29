@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import io
 import base64
 import pandas as pd
+from utils.constants import EXCLUDED_PARTICIPANTS
 
 columns_mapping = {
     "I felt that the robot yawning distracted me from the task": "Yawn",
@@ -20,21 +21,25 @@ response_mapping = {
     'Strong Agree': 5
 }
 
-
 def load_data(pre_experiment_csv, post_experiment_csv):
     """
-    Load and join pre-experiment and post-experiment questionnaire data.
+    Load and join pre-experiment and post-experiment questionnaire data,
+    excluding participants in EXCLUDED_PARTICIPANTS.
 
     Parameters:
     - pre_experiment_csv: Path to the pre-experiment questionnaire CSV file.
     - post_experiment_csv: Path to the post-experiment questionnaire CSV file.
 
     Returns:
-    - post_df: Pandas DataFrame with joined data, including the ADHD_Indication field.
+    - post_df: Pandas DataFrame with joined data, including the ADHD Indication field.
     """
     # Load pre and post data
     pre_df = pd.read_csv(pre_experiment_csv)
     post_df = pd.read_csv(post_experiment_csv)
+
+    # Exclude participants from both datasets
+    pre_df = pre_df[~pre_df['Participant number:'].isin(EXCLUDED_PARTICIPANTS)]
+    post_df = post_df[~post_df['Participant number:'].isin(EXCLUDED_PARTICIPANTS)]
 
     # Merge data on 'Participant number:'
     merged_df = post_df.merge(pre_df[['Participant number:', 'ADHD Indication', 'Gender']], 
@@ -48,7 +53,6 @@ def load_data(pre_experiment_csv, post_experiment_csv):
     filtered_df = merged_df.filter(items=necessary_columns)
 
     return filtered_df
-
 
 def preprocess_post_data(post_df):
     """
@@ -72,7 +76,6 @@ def preprocess_post_data(post_df):
             print(f"Warning: Column '{column}' not found in post_df.")
 
     return post_df
-
 
 def create_box_plot(dataframe, title, y_ticks):
     """
@@ -117,7 +120,6 @@ def create_box_plot(dataframe, title, y_ticks):
 
     return base64_image
 
-
 def generate_gender_based_box_plots(pre_experiment_csv, post_experiment_csv):
     """
     Generate box plots for each gender-based group and return them as Base64-encoded strings.
@@ -130,9 +132,12 @@ def generate_gender_based_box_plots(pre_experiment_csv, post_experiment_csv):
     - box_plots: Dictionary with Base64-encoded box plot images for each group.
     """
     # Load and merge data
+    
     post_df = load_data(pre_experiment_csv, post_experiment_csv)
 
+
     # Split the dataframe into gender-based groups
+    print(post_df.columns)
     groups = {
         "ADHD_Male": post_df[(post_df["ADHD Indication"] == True) & (post_df["Gender_x"] == "Male")],
         "ADHD_Female": post_df[(post_df["ADHD Indication"] == True) & (post_df["Gender_x"] == "Female")],
@@ -140,6 +145,7 @@ def generate_gender_based_box_plots(pre_experiment_csv, post_experiment_csv):
         "NonADHD_Female": post_df[(post_df["ADHD Indication"] == False) & (post_df["Gender_x"] == "Female")],
     }
 
+    print("Extracting groups")
     # Generate and store box plots
     box_plots = {}
     yint = [0, 1, 2, 3, 4, 5]  # Y-axis ticks

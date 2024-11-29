@@ -2,6 +2,7 @@ import os
 import json
 import pandas as pd
 from preprocessor.accuracys_stats_preprocessor import preprocess_accuracy_stat
+from utils.constants import EXCLUDED_PARTICIPANTS
 
 def extractErrors(file_path):
     """Extract errors from response time text files."""
@@ -37,10 +38,10 @@ def extractParticipant(baseDir, startExptNum, endExptNum, session, adhd_list, no
     }
 
     for e in range(startExptNum, endExptNum + 1):
-        if e in [2, 5, 23, 24, 35, 36]:  # Skip participant 24
+        if e in EXCLUDED_PARTICIPANTS:
             continue
         
-        currentPath = os.path.join(baseDir, f'P{e}/expt_{e}_session_{session}_Response_Time.txt')
+        currentPath = os.path.join(baseDir, f'Accuracy/P{e}/expt_{e}_session_{session}_Response_Time.txt')
         incorrect_click, incorrect_pass = extractErrors(currentPath)
 
         # Calculate accuracy in blocks of 'n' trials
@@ -109,7 +110,7 @@ def preprocess_and_save_trendlines(baseDir, pre_experiment_file):
     for n in [12, 120]:
         accuracy_data = computeTotalAccuracy(baseDir, 1, 59, adhd_list, non_adhd_list, n=n)
         # Save to file
-        filename = f"../backend/results/trendline_accuracy_{n}.json"
+        filename = f"../backend/results/accuracy/trendline_accuracy_{n}.json"
         absolute_csv_path = os.path.abspath(filename)
         with open(absolute_csv_path, 'w') as outfile:
             json.dump(accuracy_data, outfile, indent=4)

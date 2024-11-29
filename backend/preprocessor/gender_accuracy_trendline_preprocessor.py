@@ -1,6 +1,7 @@
 import os
 import json
 import pandas as pd
+from utils.constants import EXCLUDED_PARTICIPANTS
 
 def extractErrors(file_path):
     """
@@ -110,7 +111,7 @@ def compute_gender_accuracy(baseDir, gender_groups, n=120):
 
 
 
-def save_gender_accuracy_to_json(baseDir, pre_experiment_csv, output_file="results/gender_accuracy.json", n=120):
+def save_gender_accuracy_to_json(baseDir, pre_experiment_csv, output_file="results/accuracy/gender_accuracy.json", n=120):
     """
     Save the computed gender accuracy to a JSON file.
 
@@ -132,7 +133,7 @@ def save_gender_accuracy_to_json(baseDir, pre_experiment_csv, output_file="resul
     }
     for g in ["M-ADHD", "F-ADHD", "M-nonADHD", "F-nonADHD"]:
         for e in gender_groups[g]:
-            if e in [2, 5, 23, 24, 35, 36]:
+            if e in EXCLUDED_PARTICIPANTS:
                 gender_groups[g].remove(e)
     print('M-ADHD: ', len(gender_groups['M-ADHD']))
     print('F-ADHD: ', len(gender_groups['F-ADHD']))

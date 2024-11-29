@@ -61,3 +61,22 @@ export const fetchPlotData = async () => {
   console.log("Plot data:", data);
   return data;
 };
+
+export const fetchInfoData = async () => {
+  console.log("Fetching info data from:", `${API_URL}/info`);
+
+  const response = await fetch(`${API_URL}/info`, {
+    method: 'GET',
+    headers: {
+      Accept: 'application/json',
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+
+  const data = await response.json();
+  console.log("Info data:", data);
+  return data;
+};

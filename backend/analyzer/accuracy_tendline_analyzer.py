@@ -31,7 +31,7 @@ def analyze_session_accuracy(json_file):
 
     return p_values
 
-def save_p_values_to_json(p_values, output_file="../backend/results/trendline_accuracy_pValue.json"):
+def save_p_values_to_json(p_values, output_file="../backend/results/accuracy/trendline_accuracy_pValue.json"):
     """
     Saves the computed p-values to a JSON file.
 
@@ -97,7 +97,7 @@ def analyze_chi_square(json_file):
 
 
 
-def save_chi_square_results(chi_square_results, output_file="../backend/results/trendline_accuracy_chiSquare.json"):
+def save_chi_square_results(chi_square_results, output_file="../backend/results/accuracy/trendline_accuracy_chiSquare.json"):
     """
     Saves the computed chi-square results to a JSON file.
 
@@ -116,5 +116,5 @@ def analyze_accruacy_pvalues(acc_json_file):
 
 def analyze_accuracy_chiSquare():
     print('hello')
-    chi_square_results = analyze_chi_square('../backend/results/stat_accuracy.json')
+    chi_square_results = analyze_chi_square('../backend/results/accuracy/stat_accuracy.json')
     return chi_square_results

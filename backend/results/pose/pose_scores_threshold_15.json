@@ -1,0 +1,266 @@
+{
+    "ADHD": [
+        {
+            "Participant": 1,
+            "With Distraction": 79.44444444444444,
+            "Without Distraction": 74.72222222222223
+        },
+        {
+            "Participant": 7,
+            "With Distraction": 76.94444444444444,
+            "Without Distraction": 69.33000144864552
+        },
+        {
+            "Participant": 8,
+            "With Distraction": 92.17553688141923,
+            "Without Distraction": 91.31652661064425
+        },
+        {
+            "Participant": 9,
+            "With Distraction": 95.27777777777777,
+            "Without Distraction": 96.92810457516339
+        },
+        {
+            "Participant": 12,
+            "With Distraction": 75.11204481792716,
+            "Without Distraction": 84.35574229691876
+        },
+        {
+            "Participant": 18,
+            "With Distraction": 89.2839186956834,
+            "Without Distraction": 93.42911877394636
+        },
+        {
+            "Participant": 19,
+            "With Distraction": 90.07520399464134,
+            "Without Distraction": 86.01774042950512
+        },
+        {
+            "Participant": 20,
+            "With Distraction": 80.62295003471473,
+            "Without Distraction": 81.83473389355743
+        },
+        {
+            "Participant": 25,
+            "With Distraction": 79.92063492063492,
+            "Without Distraction": 81.58263305322129
+        },
+        {
+            "Participant": 26,
+            "With Distraction": 96.93277310924368,
+            "Without Distraction": 95.54154995331464
+        },
+        {
+            "Participant": 27,
+            "With Distraction": 84.65452847805788,
+            "Without Distraction": 87.14752567693745
+        },
+        {
+            "Participant": 28,
+            "With Distraction": 78.65688648340692,
+            "Without Distraction": 71.58263305322129
+        },
+        {
+            "Participant": 29,
+            "With Distraction": 96.94444444444446,
+            "Without Distraction": 93.87721755368814
+        },
+        {
+            "Participant": 30,
+            "With Distraction": 90.53921568627452,
+            "Without Distraction": 85.8029878618114
+        },
+        {
+            "Participant": 32,
+            "With Distraction": 84.31372549019608,
+            "Without Distraction": 87.43697478991596
+        },
+        {
+            "Participant": 33,
+            "With Distraction": 91.61064425770309,
+            "Without Distraction": 99.15966386554622
+        },
+        {
+            "Participant": 37,
+            "With Distraction": 99.16433239962652,
+            "Without Distraction": 92.453314659197
+        },
+        {
+            "Participant": 38,
+            "With Distraction": 67.77599740461156,
+            "Without Distraction": 77.01542198800423
+        },
+        {
+            "Participant": 39,
+            "With Distraction": 93.03688141923436,
+            "Without Distraction": 93.57843137254902
+        },
+        {
+            "Participant": 40,
+            "With Distraction": 80.99673202614379,
+            "Without Distraction": 73.8888888888889
+        },
+        {
+            "Participant": 41,
+            "With Distraction": 77.54355979680007,
+            "Without Distraction": 79.37441643323996
+        },
+        {
+            "Participant": 51,
+            "With Distraction": 90.54621848739497,
+            "Without Distraction": 92.77777777777777
+        },
+        {
+            "Participant": 52,
+            "With Distraction": 83.81652661064426,
+            "Without Distraction": 82.07282913165265
+        },
+        {
+            "Participant": 53,
+            "With Distraction": 100.0,
+            "Without Distraction": 100.0
+        },
+        {
+            "Participant": 54,
+            "With Distraction": 83.8188608776844,
+            "Without Distraction": 79.68954248366013
+        },
+        {
+            "Participant": 55,
+            "With Distraction": 95.55555555555556,
+            "Without Distraction": 93.8375350140056
+        }
+    ],
+    "Non-ADHD": [
+        {
+            "Participant": 3,
+            "With Distraction": 91.60130718954248,
+            "Without Distraction": 96.63865546218487
+        },
+        {
+            "Participant": 4,
+            "With Distraction": 93.04621848739497,
+            "Without Distraction": 92.43697478991596
+        },
+        {
+            "Participant": 6,
+            "With Distraction": 97.76377217553689,
+            "Without Distraction": 91.06442577030812
+        },
+        {
+            "Participant": 10,
+            "With Distraction": 92.4579831932773,
+            "Without Distraction": 90.27310924369748
+        },
+        {
+            "Participant": 11,
+            "With Distraction": 93.33333333333333,
+            "Without Distraction": 86.60130718954248
+        },
+        {
+            "Participant": 13,
+            "With Distraction": 95.79831932773108,
+            "Without Distraction": 90.27310924369748
+        },
+        {
+            "Participant": 14,
+            "With Distraction": 92.75910364145658,
+            "Without Distraction": 93.88422035480858
+        },
+        {
+            "Participant": 15,
+            "With Distraction": 87.42997198879551,
+            "Without Distraction": 96.08076563958917
+        },
+        {
+            "Participant": 16,
+            "With Distraction": 78.58076563958916,
+            "Without Distraction": 80.19374416433239
+        },
+        {
+            "Participant": 17,
+            "With Distraction": 84.33706816059758,
+            "Without Distraction": 82.41596638655462
+        },
+        {
+            "Participant": 21,
+            "With Distraction": 95.0,
+            "Without Distraction": 90.55555555555554
+        },
+        {
+            "Participant": 22,
+            "With Distraction": 82.99953314659197,
+            "Without Distraction": 94.67787114845937
+        },
+        {
+            "Participant": 31,
+            "With Distraction": 96.66666666666667,
+            "Without Distraction": 93.6111111111111
+        },
+        {
+            "Participant": 34,
+            "With Distraction": 97.77777777777777,
+            "Without Distraction": 88.54808590102708
+        },
+        {
+            "Participant": 42,
+            "With Distraction": 88.01789077212806,
+            "Without Distraction": 89.85766956355191
+        },
+        {
+            "Participant": 44,
+            "With Distraction": 84.4140989729225,
+            "Without Distraction": 89.11297852474324
+        },
+        {
+            "Participant": 45,
+            "With Distraction": 94.42810457516339,
+            "Without Distraction": 89.3879472693032
+        },
+        {
+            "Participant": 46,
+            "With Distraction": 87.72408963585434,
+            "Without Distraction": 94.40476190476191
+        },
+        {
+            "Participant": 47,
+            "With Distraction": 92.71708683473389,
+            "Without Distraction": 96.045197740113
+        },
+        {
+            "Participant": 48,
+            "With Distraction": 88.27030812324931,
+            "Without Distraction": 85.49953314659199
+        },
+        {
+            "Participant": 49,
+            "With Distraction": 89.96031746031747,
+            "Without Distraction": 93.74395212630508
+        },
+        {
+            "Participant": 50,
+            "With Distraction": 92.72175536881419,
+            "Without Distraction": 92.43697478991596
+        },
+        {
+            "Participant": 56,
+            "With Distraction": 67.71708683473389,
+            "Without Distraction": 84.593837535014
+        },
+        {
+            "Participant": 57,
+            "With Distraction": 82.38328664799253,
+            "Without Distraction": 78.16182405165456
+        },
+        {
+            "Participant": 58,
+            "With Distraction": 98.8795518207283,
+            "Without Distraction": 98.87955182072828
+        },
+        {
+            "Participant": 59,
+            "With Distraction": 84.65686274509805,
+            "Without Distraction": 85.22408963585434
+        }
+    ]
+}

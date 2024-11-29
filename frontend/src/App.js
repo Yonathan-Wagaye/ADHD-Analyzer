@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Analysis from './pages/Analysis';
 import Plots from './pages/Plots';
 import Footer from './components/Footer';
+import Info from './pages/Info';
 import './App.css';
 
 function App() {
@@ -22,6 +23,9 @@ function App() {
               <Link to="/">Social Robotics Analyzer</Link>
             </li>
             <li>
+              <Link to="/info">Info</Link> 
+            </li>
+            <li>
               <Link to="/analysis">Analysis</Link>
             </li>
             <li>
@@ -35,6 +39,7 @@ function App() {
             <Route path="/" element={<Home onUploadSuccess={handleUploadSuccess} />} />
             <Route path="/analysis" element={<Analysis data={responseData} />} />
             <Route path="/plots" element={<Plots plotUrls={responseData?.plotUrls} />} />
+            <Route path="/info" element={<Info />} />
           </Routes>
         </div>
 

@@ -124,11 +124,11 @@ def generate_plots():
     Returns:
     - A dictionary containing Base64-encoded strings of the plots.
     """
-    p_values = analyze_accruacy_pvalues("../backend/results/stat_accuracy.json")
+    p_values = analyze_accruacy_pvalues("../backend/results/accuracy/stat_accuracy.json")
     print(p_values)
     plots = {}
     for n in [12, 120]:
-        filename = f"../backend/results/trendline_accuracy_{n}.json"
+        filename = f"../backend/results/accuracy/trendline_accuracy_{n}.json"
         json_file = os.path.abspath(filename)
         if os.path.exists(json_file):
             data = load_json_as_dict(json_file)

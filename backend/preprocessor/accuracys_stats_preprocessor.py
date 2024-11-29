@@ -1,6 +1,7 @@
 import os
 import json
 import pandas as pd
+from utils.constants import EXCLUDED_PARTICIPANTS
 
 def extractErrors(file_path):
     """Extract errors from response time text files."""
@@ -36,10 +37,10 @@ def extractParticipantAccuracy(baseDir, session, participants, adhd_list, n=120)
     session_scores = {'ADHD': [], 'Non-ADHD': []}  # Store individual scores for analysis
 
     for participant_id in participants:
-        if participant_id in [2, 5, 23, 24, 35, 36]:  # Skip specific participants if necessary
+        if participant_id in EXCLUDED_PARTICIPANTS:  # Skip specific participants if necessary
             continue
         
-        currentPath = os.path.join(baseDir, f'P{participant_id}/expt_{participant_id}_session_{session}_Response_Time.txt')
+        currentPath = os.path.join(baseDir, f'Accuracy/P{participant_id}/expt_{participant_id}_session_{session}_Response_Time.txt')
         incorrect_click, incorrect_pass = extractErrors(currentPath)
 
         # Calculate accuracy in blocks of 'n' trials
@@ -72,7 +73,7 @@ def computeSessionAccuracy(baseDir, adhd_list, non_adhd_list, n=120):
     return all_sessions_scores
 
 
-def save_stat_accuracy_to_json(baseDir, pre_experiment_file, output_file="../backend/results/stat_accuracy.json", n=120):
+def save_stat_accuracy_to_json(baseDir, pre_experiment_file, output_file="../backend/results/accuracy/stat_accuracy.json", n=120):
     """Compute and save session accuracy data for ADHD and Non-ADHD groups."""
     # Load ADHD and Non-ADHD participant lists
     pre_experiment_df = pd.read_csv(pre_experiment_file)
