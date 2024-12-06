@@ -15,7 +15,7 @@ def process_pre_expt(filePath):
     # Rename columns to standard format Q0, Q1, etc.
     new_columns = {df.columns[i + 1]: f'Q{i}' for i in range(18)}
     df = df.rename(columns=new_columns)
-    #df = df.drop(df.index[23])  # Drop any specific row as needed
+    df = df.drop(df.index[23])  # Drop any specific row as needed
 
     # Part A Score and ADHD Indication are already present, so no further calculation needed
     return df
