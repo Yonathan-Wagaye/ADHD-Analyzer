@@ -40,7 +40,12 @@ def generate_pose_trendline_plot(data, n, threshold, p_values):
 
         session_time_points = [i + (session_index - 1) * n for i in range(len(adhd_points))]
         time_points.extend(session_time_points)
-
+    
+    if n == 120:
+        time_points.append(time_points[-1] + n)
+        adhd_all_points.append(adhd_all_points[-1])
+        non_adhd_all_points.append(non_adhd_all_points[-1])
+        
     fig, ax = plt.subplots(figsize=(15, 8))
     if n == 120:
         ax.step(time_points, adhd_all_points, 'r-', label='ADHD', where='post', linewidth=2)
