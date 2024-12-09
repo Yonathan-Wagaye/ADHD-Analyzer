@@ -42,7 +42,7 @@ def preprocess_cumulative_pose_stability(baseDir):
     for group, participants in gender_groups.items():
         for participant_id in participants:
             participant_scores = []
-            for session in range(3, 9):  # Sessions 3 to 8
+            for session in range(1, 9):  # Sessions 3 to 8
                 pose_file_path = os.path.join(
                     baseDir, f'Pose/threshold_15/P{participant_id}/expt_{participant_id}_session_{session}_list.pkl'
                 )
