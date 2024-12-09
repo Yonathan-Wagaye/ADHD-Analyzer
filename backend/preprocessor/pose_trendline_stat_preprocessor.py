@@ -27,7 +27,7 @@ def extract_pose_scores(base_path, session, participants, threshold, n=120):
                 pose_changes = sum(1 for j in range(1, total_frames) if block_poses[j] != block_poses[j - 1])
                 score = (1 - (pose_changes / total_frames)) * 100 if total_frames > 0 else 0
 
-                if session in [4, 5, 8]:  # 'w' sessions
+                if session in [1, 4, 5, 8]:  # 'w' sessions
                     session_scores['w'][i // n].append(score)
                 else:  # 'wo' sessions
                     session_scores['wo'][i // n].append(score)
