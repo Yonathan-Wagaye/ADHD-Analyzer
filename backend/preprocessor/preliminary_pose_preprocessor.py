@@ -40,7 +40,7 @@ def read_pkl_file(base_path, participants, num_sessions):
     """
     final_data = {}
     for participant in participants:
-        for session in range(3, num_sessions + 1):  # Only sessions 3 to 8
+        for session in range(1, num_sessions + 1):  # Only sessions 3 to 8
             filename = os.path.expanduser(f"{base_path}/P{participant}/expt_{participant}_session_{session}_list.pkl")
             try:
                 with open(filename, 'rb') as file:
@@ -71,7 +71,7 @@ def calculate_cumulative_pose_scores(data, participants, num_sessions):
         w_scores = []
         wo_scores = []
 
-        for session in range(3, num_sessions + 1):  # Sessions 3 to 8
+        for session in range(1, num_sessions + 1):  # Sessions 3 to 8
             poses = data.get(f'e_{participant}_s_{session}', [])
             total_frames = len(poses)
 
@@ -79,7 +79,7 @@ def calculate_cumulative_pose_scores(data, participants, num_sessions):
 
             score = 100 * (1 - (pose_changes / total_frames)) if total_frames > 0 else 0
 
-            if session in [4, 5, 8]:  # With distraction
+            if session in [1, 4, 5, 8]:  # With distraction
                 w_scores.append(score)
             else:  # Without distraction
                 wo_scores.append(score)
