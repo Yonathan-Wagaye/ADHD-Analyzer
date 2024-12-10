@@ -50,7 +50,7 @@ def compute_cumulative_accuracy(baseDir, gender_groups):
     """
     cumulative_accuracy = {group: {} for group in gender_groups}
 
-    for session in range(3, 9):  # Sessions 3 to 8
+    for session in range(1, 9):  # Sessions 3 to 8
         for group, participants in gender_groups.items():
             for participant_id in participants:
                 file_path = os.path.join(baseDir, f'Accuracy/P{participant_id}/expt_{participant_id}_session_{session}_Response_Time.txt')
