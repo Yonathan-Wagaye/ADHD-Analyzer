@@ -85,8 +85,8 @@ def convertToAccuracy(df):
     """
     Convert total errors to accuracy scores for both 'w' and 'wo' sessions.
     """
-    df["total_error_w"] = 1 - (df["w_incorrect_pass"] + df["w_incorrect_click"]) / 120
-    df["total_error_wo"] = 1 - (df["wo_incorrect_pass"] + df["wo_incorrect_click"]) / 120
+    df["total_error_w"] = 1 - (df["w_incorrect_pass"] + df["w_incorrect_click"]) / 480
+    df["total_error_wo"] = 1 - (df["wo_incorrect_pass"] + df["wo_incorrect_click"]) / 480
     return df
 
 def preprocess_and_save(baseDir, output_csv="../backend/results/accuracy_data.csv"):
