@@ -62,7 +62,7 @@ def extractParticipant(baseDir, startExptNum, endExptNum, session, adhd_list, no
 def computeTotalAccuracy(baseDir, startExptNum, endExptNum, adhd_list, non_adhd_list, n=12):
     """Compute total accuracy for all sessions."""
     # Update normalization factors based on the number of participants
-    adhd_count = 27
+    adhd_count = 26
     non_adhd_count = 26
 
     all_sessions_scores = {
